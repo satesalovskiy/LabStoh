@@ -2,6 +2,7 @@ package sample;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
 
 public class QueueModel {
@@ -100,9 +101,14 @@ public class QueueModel {
 //        System.out.println(alltime);
         System.out.println("Вероятность, что сервер занят: " + ((double)serverIsBusy/(double)alltime));
 
-        double averageNumberOfCallInAQueue;
+        double averageNumberOfCallInAQueue = 0;
 
-        System.out.println("Среднее количество заявок в очереди: "  );
-        System.out.println("Размер очереди: " + ergod);
+        for (Map.Entry<Integer, Integer> b: ergod.entrySet()) {
+
+            averageNumberOfCallInAQueue += b.getValue();
+        }
+
+        System.out.println("Среднее количество заявок в очереди: " + averageNumberOfCallInAQueue );
+        System.out.println("Размер очереди в различне моменты времени (эргод распр): " + ergod);
     }
 }
