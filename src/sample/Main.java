@@ -51,7 +51,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("First Application");
+        primaryStage.setTitle("StohLab");
         primaryStage.setWidth(1000);
         primaryStage.setHeight(1000);
         primaryStage.show();
@@ -60,7 +60,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         //launch(args);
-        QueueModel queueModel = new QueueModel(100,1000);
+        QueueModel queueModel = new QueueModel(4,2);
         queueModel.work();
     }
 }
